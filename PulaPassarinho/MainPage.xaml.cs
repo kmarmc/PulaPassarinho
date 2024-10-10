@@ -2,8 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
-	const int gravidade = 30; //pixel
-	const int TempoEntreFrames = 100; //ms
+	const int gravidade = 40; //pixel
+	const int TempoEntreFrames = 25; //ms
 	bool Morreu = false;
 	public MainPage()
 	{
@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
 	}
 	void AplicarGravidade ()
 	{
-		alexandrepato.TranslationY -= gravidade;
+		alexandrepato.TranslationY += gravidade;
 	}
 	async Task Desenhar ()
 	{

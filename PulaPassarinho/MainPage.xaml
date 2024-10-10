@@ -17,18 +17,20 @@
 
         <Image  x:Name="germancano"
                 Source="germancano.png"
+                WidthRequest="110"
                 HorizontalOptions="End"
                 VerticalOptions="Start" />
 
         <Image  x:Name="canopvc"
                 Source="canopvc.png"
+                WidthRequest="100"
                 HorizontalOptions="End"
                 VerticalOptions="End" />
-
         <Image  x:Name="gramado"
                 Source="gramado.png"
                 HorizontalOptions="Fill"
                 VerticalOptions="End"/>
+
     </Grid>
 
 </ContentPage>
