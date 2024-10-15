@@ -4,6 +4,10 @@
              x:Class="PulaPassarinho.MainPage"
              Shell.NavBarIsVisible="False">
         <Grid>
+        <Grid.GestureRecognizers>
+        <TapGestureRecognizer Tapped ="GridClicked"/>
+        </Grid.GestureRecognizers>
+        
                 <Image  x:Name="fundo"
                         Source="fundo.png"
                         HorizontalOptions="Fill"
@@ -36,9 +40,10 @@
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill">
                         <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GameOver"/>
+                        <TapGestureRecognizer Tapped="GameOverClicked"/>
                         </Frame.GestureRecognizers>
-                        <Image Source="gameover.png"/>
+                        <Image Source="gameover.png"
+                                HeightRequest="150"/>
                 </Frame>
         </Grid>
 

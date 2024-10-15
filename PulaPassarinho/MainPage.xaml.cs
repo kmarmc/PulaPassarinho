@@ -8,6 +8,11 @@ public partial class MainPage : ContentPage
 	double LarguraJanela=0;
 	double AlturaJanela=0;
 	int Velocidade=10;
+	const int maxTempoPulando = 3;
+	int TempoPulando = 0;
+	bool EstaPulando = false;
+	const int ForcaPulo = 60;
+
 	public MainPage()
 	{
 		InitializeComponent();
@@ -20,6 +25,9 @@ public partial class MainPage : ContentPage
 	{
 		while (!Morreu)
 		{
+			if (EstaPulando)
+			  AplicaPulo();
+			else
 			AplicarGravidade (); 
 			GerenciarCanos ();
 			if (VerificarColisao())
@@ -48,7 +56,7 @@ public partial class MainPage : ContentPage
 		}
 
 	}
-	void GameOver (object s, TappedEventArgs a)
+	void GameOverClicked (object s, TappedEventArgs a)
 	{
 		FrameGameOver.IsVisible =false; 
 		Inicializar();
@@ -82,7 +90,21 @@ public partial class MainPage : ContentPage
 		else
 			return false;	
 	}
-	void Inicializar()
+	void AplicaPulo()
+	{
+		alexandrepato.TranslationY -= ForcaPulo;
+		TempoPulando ++;
+		if (TempoPulando >= maxTempoPulando)
+		{
+			EstaPulando = false;
+			TempoPulando = 0;
+		}
+	}
+	void GridClicked (object s, TappedEventArgs a)
+	{
+		EstaPulando = true;
+	}
+		void Inicializar()
 	{
 		Morreu= false;
 		alexandrepato.TranslationY= 0;
