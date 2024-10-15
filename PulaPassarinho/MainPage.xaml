@@ -30,13 +30,13 @@
                         Source="gramado.png"
                         HorizontalOptions="Fill"
                         VerticalOptions="End"/>
-                <Frame>
-                <Frame x:Name="frameGameOver"
+
+                <Frame x:Name="FrameGameOver"
                        BackgroundColor="#99000000"
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill">
                         <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+                        <TapGestureRecognizer Tapped="GameOver"/>
                         </Frame.GestureRecognizers>
                         <Image Source="gameover.png"/>
                 </Frame>

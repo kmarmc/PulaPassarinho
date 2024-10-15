@@ -59,7 +59,7 @@ public partial class MainPage : ContentPage
 		if (!Morreu)
 		{
 			if (VerificarColisaoTeto()||
-			VerificaColisaoChao)
+			VerificarColisaoChao())
 		{
 		return true;
 		}
