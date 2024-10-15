@@ -3,34 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PulaPassarinho.MainPage"
              Shell.NavBarIsVisible="False">
- <Grid>
-        <Image  x:Name="fundo"
-                Source="fundo.png"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill"/>
+        <Grid>
+                <Image  x:Name="fundo"
+                        Source="fundo.png"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"/>
 
-        <Image  x:Name="alexandrepato"
-                Source="alexandrepato.png"
-                HeightRequest="50"
-                WidthRequest="50"                
-                HorizontalOptions="Start" />
+                <Image  x:Name="alexandrepato"
+                        Source="alexandrepato.png"
+                        HeightRequest="50"
+                        WidthRequest="50"
+                        HorizontalOptions="Start"/>
 
-        <Image  x:Name="germancano"
-                Source="germancano.png"
-                WidthRequest="110"
-                HorizontalOptions="End"
-                VerticalOptions="Start" />
+                <Image  x:Name="germancano"
+                        Source="germancano.png"
+                        WidthRequest="110"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"/>
 
-        <Image  x:Name="canopvc"
-                Source="canopvc.png"
-                WidthRequest="100"
-                HorizontalOptions="End"
-                VerticalOptions="End" />
-        <Image  x:Name="gramado"
-                Source="gramado.png"
-                HorizontalOptions="Fill"
-                VerticalOptions="End"/>
-
-    </Grid>
+                <Image  x:Name="canopvc"
+                        Source="canopvc.png"
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"/>
+                <Image  x:Name="gramado"
+                        Source="gramado.png"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="End"/>
+                <Frame>
+                <Frame x:Name="frameGameOver"
+                       BackgroundColor="#99000000"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill">
+                        <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGameOverClicked"/>
+                        </Frame.GestureRecognizers>
+                        <Image Source="gameover.png"/>
+                </Frame>
+        </Grid>
 
 </ContentPage>
