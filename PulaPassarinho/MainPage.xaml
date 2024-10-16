@@ -4,12 +4,13 @@
              x:Class="PulaPassarinho.MainPage"
              Shell.NavBarIsVisible="False">
         <Grid>
-        <Grid.GestureRecognizers>
-        <TapGestureRecognizer Tapped ="GridClicked"/>
-        </Grid.GestureRecognizers>
-        
+                <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GridClicked"/>
+                </Grid.GestureRecognizers>
+
                 <Image  x:Name="fundo"
                         Source="fundo.png"
+                        Aspect="Fill"
                         HorizontalOptions="Fill"
                         VerticalOptions="Fill"/>
 
@@ -21,7 +22,7 @@
 
                 <Image  x:Name="germancano"
                         Source="germancano.png"
-                        WidthRequest="110"
+                         WidthRequest="110"
                         HorizontalOptions="End"
                         VerticalOptions="Start"/>
 
@@ -30,20 +31,23 @@
                         WidthRequest="100"
                         HorizontalOptions="End"
                         VerticalOptions="End"/>
+                        
                 <Image  x:Name="gramado"
                         Source="gramado.png"
                         HorizontalOptions="Fill"
                         VerticalOptions="End"/>
-
+                        
                 <Frame x:Name="FrameGameOver"
-                       BackgroundColor="#99000000"
+                       BackgroundColor="#49000000"
                        HorizontalOptions="Fill"
                        VerticalOptions="Fill">
-                        <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GameOverClicked"/>
-                        </Frame.GestureRecognizers>
+                <Grid>
+                        <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="GameOverClicked"/>
+                        </Grid.GestureRecognizers>
                         <Image Source="gameover.png"
-                                HeightRequest="150"/>
+                               HeightRequest="150"/>
+                </Grid>
                 </Frame>
         </Grid>
 

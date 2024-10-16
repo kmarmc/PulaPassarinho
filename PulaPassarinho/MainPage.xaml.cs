@@ -3,7 +3,7 @@
 public partial class MainPage : ContentPage
 {
 	const int gravidade = 40; //pixel
-	const int TempoEntreFrames = 25; //ms
+	const int TempoEntreFrames = 50; //ms
 	bool Morreu = false;
 	double LarguraJanela=0;
 	double AlturaJanela=0;
@@ -12,6 +12,7 @@ public partial class MainPage : ContentPage
 	int TempoPulando = 0;
 	bool EstaPulando = false;
 	const int ForcaPulo = 60;
+	const int AberturaMinima = 200;
 
 	public MainPage()
 	{
@@ -53,6 +54,9 @@ public partial class MainPage : ContentPage
 		{
 			canopvc.TranslationX =0;
 			germancano.TranslationX =0;
+			var alturaMax = -100;
+			var alturaMin = -germancano.HeightRequest;
+			germancano.TranslationY = Random.Shared.Next ((int)alturaMin, (int)alturaMax);
 		}
 
 	}
@@ -84,7 +88,7 @@ public partial class MainPage : ContentPage
 	}
 	bool VerificarColisaoChao()
 	{
-		var maxY=-AlturaJanela/2 -gramado.HeightRequest;
+		var maxY=AlturaJanela/2 -gramado.HeightRequest;
 		if (alexandrepato.TranslationY >= maxY)
 			return true;
 		else
