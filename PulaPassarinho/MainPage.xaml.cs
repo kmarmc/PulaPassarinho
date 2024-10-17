@@ -13,6 +13,7 @@ public partial class MainPage : ContentPage
 	bool EstaPulando = false;
 	const int ForcaPulo = 60;
 	const int AberturaMinima = 200;
+	int Score = 0;
 
 	public MainPage()
 	{
@@ -57,6 +58,8 @@ public partial class MainPage : ContentPage
 			var alturaMax = -100;
 			var alturaMin = -germancano.HeightRequest;
 			germancano.TranslationY = Random.Shared.Next ((int)alturaMin, (int)alturaMax);
+			Score ++;
+			LabelScore.Text = "Canos" + Score.ToString("D3");
 		}
 
 	}

@@ -36,6 +36,13 @@
                         Source="gramado.png"
                         HorizontalOptions="Fill"
                         VerticalOptions="End"/>
+
+                <Label   x:Name="LabelScore"
+                          Text="Canos:"
+                          BackgroundColor="White"
+                          FontFamily="VelhaEscola.ttf"
+                          VerticalOptions="Start"
+                          HorizontalOptions="End"/>
                         
                 <Frame x:Name="FrameGameOver"
                        BackgroundColor="#49000000"
