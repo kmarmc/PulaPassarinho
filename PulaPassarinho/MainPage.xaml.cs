@@ -1,4 +1,6 @@
-﻿namespace PulaPassarinho;
+﻿using System.Runtime.InteropServices;
+
+namespace PulaPassarinho;
 
 public partial class MainPage : ContentPage
 {
@@ -72,8 +74,14 @@ public partial class MainPage : ContentPage
 	}
 		void Inicializar()
 	{
+		germancano.TranslationX = -LarguraJanela;
+		canopvc.TranslationX = -LarguraJanela;
+		alexandrepato.TranslationX = 0;
+		alexandrepato.TranslationY = 0;
 		Morreu= false;
 		alexandrepato.TranslationY= 0;
+		Score= 0;
+		GerenciarCanos();
 	}
 
 
@@ -82,7 +90,9 @@ public partial class MainPage : ContentPage
 		if (!Morreu)
 		{
 			if (VerificarColisaoTeto()||
-			VerificarColisaoChao())
+			VerificarColisaoChao()||
+			VerificarColisaoGermanCano()||
+			VerificarColisaoCanoPvc())
 		{
 		return true;
 		}
@@ -114,6 +124,38 @@ public partial class MainPage : ContentPage
 			EstaPulando = false;
 			TempoPulando = 0;
 		}
+	}
+	bool VerificarColisaoGermanCano()
+	{
+		var posHpato = (LarguraJanela/2) - (alexandrepato.WidthRequest/2);
+		var posVpato = (LarguraJanela/2) - (alexandrepato.HeightRequest/2) + alexandrepato.TranslationY;
+		if (posHpato >= Math.Abs (germancano.TranslationX) - germancano.WidthRequest &&
+		posHpato <= Math.Abs (germancano.TranslationX) + germancano.WidthRequest &&
+		posVpato <= germancano.HeightRequest + germancano.TranslationY)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	bool VerificarColisaoCanoPvc()
+	{
+		var posHpato = (LarguraJanela/2) - (alexandrepato.WidthRequest/2);
+		var posVpato = (LarguraJanela/2) - (alexandrepato.HeightRequest/2) + alexandrepato.TranslationY;
+		if (posHpato >= Math.Abs (canopvc.TranslationX) - canopvc.WidthRequest &&
+		posHpato <= Math.Abs (canopvc.TranslationX) + canopvc.WidthRequest &&
+		posVpato <= canopvc.HeightRequest + germancano.TranslationY)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
+		
 	}
 	void GridClicked (object s, TappedEventArgs a)
 	{

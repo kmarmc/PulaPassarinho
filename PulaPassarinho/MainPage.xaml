@@ -18,22 +18,29 @@
                         Source="alexandrepato.png"
                         HeightRequest="50"
                         WidthRequest="50"
-                        HorizontalOptions="Start"/>
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
 
                 <Image  x:Name="germancano"
                         Source="germancano.png"
-                         WidthRequest="110"
+                        WidthRequest="110"
+                        HeightRequest="650"
+                        BackgroundColor="red"
                         HorizontalOptions="End"
                         VerticalOptions="Start"/>
 
                 <Image  x:Name="canopvc"
                         Source="canopvc.png"
-                        WidthRequest="100"
+                        WidthRequest="110"
+                        HeightRequest="650"
+                        BackgroundColor="Blue"
                         HorizontalOptions="End"
                         VerticalOptions="End"/>
                         
                 <Image  x:Name="gramado"
                         Source="gramado.png"
+                        HeightRequest="60"
+                        Aspect="AspectFill"
                         HorizontalOptions="Fill"
                         VerticalOptions="End"/>
 
