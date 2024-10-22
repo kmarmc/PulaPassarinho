@@ -60,7 +60,7 @@ public partial class MainPage : ContentPage
 			var alturaMax = -100;
 			var alturaMin = -canopvc.HeightRequest;
 			germancano.TranslationY = Random.Shared.Next ((int)alturaMin, (int)alturaMax);
-			canopvc.TranslationY = germancano.TranslationY+AberturaMinima;
+			canopvc.TranslationY = germancano.TranslationY+AberturaMinima+canopvc.HeightRequest;
 			Score ++;
 			LabelScore.Text = "Canos" + Score.ToString("D3");
 		}

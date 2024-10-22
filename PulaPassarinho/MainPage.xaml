@@ -25,7 +25,6 @@
                         Source="germancano.png"
                         WidthRequest="110"
                         HeightRequest="650"
-                        BackgroundColor="red"
                         HorizontalOptions="End"
                         VerticalOptions="Start"/>
 
@@ -33,7 +32,6 @@
                         Source="canopvc.png"
                         WidthRequest="110"
                         HeightRequest="650"
-                        BackgroundColor="Blue"
                         HorizontalOptions="End"
                         VerticalOptions="End"/>
                         
