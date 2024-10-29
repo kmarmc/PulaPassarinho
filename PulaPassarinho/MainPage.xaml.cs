@@ -35,6 +35,8 @@ public partial class MainPage : ContentPage
 			AplicarGravidade (); 
 			GerenciarCanos ();
 			if (VerificarColisao())
+			 SoundHelper.Play("morto.wav");
+
 			{
 				Morreu = true;
 				FrameGameOver.IsVisible = true;
